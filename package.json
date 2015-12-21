@@ -18,6 +18,7 @@
   "homepage": "https://github.com/ucsb-eri/dnsZoneDisplay#readme",
   "dependencies": {
     "ejs": "^2.3.4",
-    "express": "^4.13.3"
+    "express": "^4.13.3",
+    "glob-fs": "^0.1.6"
   }
 }
