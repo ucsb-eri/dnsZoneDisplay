@@ -23,7 +23,7 @@ router.get('/zone.*', function(req, res, next) {
       }
   }
   if ( valid == true ){
-      res.render('zone', { title: 'dnsZoneDisplay Zone', conf: conf, file: which, contents : contents });
+      res.render('zone', { title: 'Zone Display', zone: which, conf: conf, file: which, contents : contents });
   }
   else {
       res.send('Having issues finding the zone file'+req.path);

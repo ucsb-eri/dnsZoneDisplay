@@ -11,7 +11,7 @@ process.chdir(prevwd);
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'dnsZoneDisplay', conf: conf, files: files });
+  res.render('index', { title: 'ERI Managed - DNS Zones Display', conf: conf, files: files });
 });
 
 module.exports = router;

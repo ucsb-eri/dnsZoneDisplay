@@ -6,8 +6,11 @@
   </head>
   <body>
     <h1><%= title %></h1>
+    <!--
     <p>Welcome to <%= title %></p>
     <p>Zone Directory (from config.json): <%= conf.zonedir %></p>
+    -->
+    <p>List of DNS Zones currently managed by ERI-IT</p>
     <% files.forEach(function(file) { %>
       <a href="/zone/<%= file %>"><%= file %></a> <br>
     <% }); %>

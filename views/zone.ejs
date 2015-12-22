@@ -4,19 +4,13 @@
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
-  <style>
-  pre { 
-    padding: 10px;
-    background-color: #cff; 
-    border-radius: 12px;
-    border: 2px solid #666;
-    }
-  </style>
   <body>
-    <h1><%= title %></h1>
+    <h1><%= zone %></h1>
     <p><a href="/">Return to Listing</a></p>
+    <!--
     <p>Zone Directory (from config.json): <%= conf.zonedir %></p>
       <a href="/zone/<%= file %>"><%= file %></a> <br>
+    -->
       <pre> 
 <%= contents %>
       </pre>
