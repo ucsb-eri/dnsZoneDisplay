@@ -36,20 +36,26 @@ if (! fileUtils.dirExists(LOGDIR)){
     process.exit(0);
 }
 
+fileUtils.canWrite(LOGFILE,function(err,success){
+    if( ! success) {
+        console.log('Unable to open or write to logfile: ' + LOGFILE + '.');
+        process.exit(0);
+    }
+});
+
 // Need to sort out using try/catch errors etc...
-try {
+//try {
     //console.log('opening logfile: ' + LOGFILE );
-    fileUtils.canWrite(LOGFILE);
     
     //if ( ! fileUtils.canWrite(LOGFILE)){
     //    console.log('Cant write to logfile: ' + LOGFILE + '.');
     //    process.exit(0);
     //}
-}
-catch (err){
-    console.log('Unable to open or write to logfile: ' + LOGFILE + '.');
-    process.exit(0);
-}
+///}
+///catch (err){
+///    console.log('Not able to open or write to logfile: ' + LOGFILE + '.');
+///    process.exit(0);
+///}
 
 var accessLogStream = fs.createWriteStream(LOGFILE, {flags: 'a'});
 var ret = accessLogStream.write("#### Starting new process",'utf8');

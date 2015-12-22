@@ -21,7 +21,7 @@ module.exports = {
         }
     },
     canWrite: function (path, callback) {
-        fs.open(path, function (err, fd) {
+        fs.open(path, 'a',function (err, fd) {
             if (err) {
                 if (err.code === "EISDIR") {
                     // Create a file in the directory or something...
