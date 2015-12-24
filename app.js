@@ -22,6 +22,8 @@ if ( fileUtils.fileExists(CONF) == false ) {
 var routes = require('./routes/index');
 var zones = require('./routes/zones');
 var users = require('./routes/users');
+var apizonelist = require('./routes/apizonelist');
+var apizoneshow = require('./routes/apizoneshow');
 //var config = require('./routes/config');
 
 var app = express();
@@ -76,6 +78,9 @@ var conf = require(CONF);
 app.use('/', routes);
 app.use('/users', users);
 app.use('/zone', zones);
+app.use('/api/zone/list', apizonelist);
+app.use('/api/zone/show', apizoneshow
+    );
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
