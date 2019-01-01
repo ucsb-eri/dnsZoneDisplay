@@ -1,0 +1,25 @@
+[Unit]
+Description=DNS Zone Display Server
+
+[Service]
+ExecStart=/usr/bin/nodemon /opt/dnsZoneDisplay/bin/www
+#/usr/bin/npm start
+# Required on some systems
+WorkingDirectory=/opt/dnsZoneDisplay
+Restart=always
+# Restart service after 10 seconds if node service crashes
+RestartSec=10
+# Output to a file, but the file is overwritten at service restart
+#StandardOutput=file:/var/log/nodejs/vmapi.out
+#StandardError=file:/var/log/nodejs/vmapi.err
+# Output to syslog
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=dnsZoneDisplay
+User=nsmgmt
+Group=nsmgmt
+Environment=NODE_ENV=production PORT=3000
+
+[Install]
+WantedBy=multi-user.target
+
